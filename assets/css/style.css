@@ -3,3 +3,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: var(--ticket-train-primary);
+    width: 80%;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+}
+h4 {
+    text-align: start;
+}
+.box_calc_ticket {
+    border-radius: 10px;
+}
+.box_shad {
+    box-shadow: 3px 5px 30px;
+}
+.colr_text {
+    border: 3px solid var(--ticket-train-primary);
+}
+.select_ages {
+    text-align: center;
+    margin: auto;
+}
+.box_btn {
+    text-align: center;
+}
+
+.special_yell:hover {
+    border: 2px solid yellow;
+    margin: -2px;
+}
+    
+
+
+
+
+
+:root {
+    --ticket-train-primary: #cf2626;
+    --ticket-train-secondary: #ffffff;
+}
+.btn_ticket_color {
+    color: var(--ticket-train-primary);
+}
