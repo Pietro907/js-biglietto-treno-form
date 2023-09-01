@@ -3,102 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biglietto del treno</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Train Ticket</title>
+    <link rel="stylesheet" href="./asset/css/style.css">
 </head>
 <body>
-
-    <!-- Titolo Calcolca il prezzo del biglietto -->
-    <h2 class="text-light py-4 mt-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
-
-    <!-- Dati per generare il biglietto -->
-    <div class="container box_shad box_calc_ticket bg-white">
-
-        <div class="row p-5">
-            <div class="col">
-                <h4 class="text-center">Nome e Cognome</h4>
-                <div class="card">
-                    <input id="in_Name" type="text" class="rounded-3 py-2 text-center colr_text"></input>
-                </div>
-            </div>
-            <div class="col col_text">
-                <h4 class="text-center">Km da percorrere</h4>
-                <div class="card">
-                    <input type="number" class="rounded-3 py-2 text-center colr_text"></input>
-                </div>
-            </div>
-            <div class="col col_text">
-                <h4 class="text-center">Fascia d'età</h4>
-                <div class="card">
-                    <select class="form-select select_ages border-3 colr_text py-2" aria-label="Default select example">
-                        <option selected>- seleziona l'età -</option>
-                        <option value="1">Minorenne</option>
-                        <option value="2">Maggiorenne</option>
-                        <option value="3">Over 65</option>
-                      </select>
-                </div>
-            </div>
-        </div>
-        <div class="container box_btn">
-            <button type="button" onclick="ticket_generator()" class="btn btn-secondary btn_ticket_color mb-3 special_yell">Genera</button>
-            <button type="button" class="btn btn-secondary btn_ticket_color mb-3 special_yell">Annulla</button>
-        </div>
-        
-    </div>
-
-    <!-- Titolo Il tuo biglietto -->
-    <h2 class="text-light pt-4 mt-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
-
-    <!-- Dettaglio Passaggeri -->
-    <div class="contaniner box_shad bg-white p-3">
-
-        <h4>DETTAGLIO PASSEGGERI</h4>
-        <div class="container border border-dark">
-            <div class="row">
-                <div class="col-4 bg-secondary p-4">
-                    <h4>NOME PASSEGGERO</h4>
-                    <h4 id="pluto">John Snow</h4>
-                </div>
-                <div class="col-8">
-                    <!-- <h4>Offerta</h4>
-                    <h4>Carrozza</h4>
-                    <h4>Codice CP</h4>
-                    <h4>Costo biglietto</h4> -->
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th class="border-0">Offerta</th>
-                            <th class="border-0">Carrozza</th>
-                            <th class="border-0">Codice CP</th>
-                            <th class="border-0">Costo biglietto</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td id="Name" class="border-0 pt-5"></td>
-                            <td id="Kilometri" class="border-0 pt-5">Otto</td>
-                            <td class="border-0 pt-5">@mdo</td>
-                            <td class="border-0 pt-5">Mark</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <script src="./assets/js/script.js">
-        // il mio script
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-        // script cdn bootstrap
-    </script>
-
     
+    <h1>
+        CALCOLA IL PREZZO DEL TUO BIGLIETTO
+    </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <h5>Nome e cognome</h5>
+                    <input class="info" id="user" type="text">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <h5>Km da percorrere</h5>
+                    <input class="info" id="distance" type="text">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <h5>Fascia d'età</h5>
+                    <select class="option" id="age">
+                        <option>Maggiorenne</option>
+                        <option>Minorenne</option>
+                        <option>Over 65</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button id="generate">GENERA</button>
+        <button>ANNULLA</button>
+    </div>
+    <h2>
+        IL TUO BIGLIETTO
+    </h2>
+    <div class="ticket">
+        <h3>
+            DETTAGLIO PASSEGGERI
+        </h3>
+        <div class="row brd-dark">
+            <div class="col-4 bg-dark">
+                <div class="card">
+                    <h3>
+                        NOME PASSEGGERO
+                    </h3>
+                    <h4 id="passenger">
+
+                    </h4>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <h6>
+                        Offerta
+                    </h6>
+                    <p id="sale">
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <h6>
+                        Carrozza
+                    </h6>
+                    <p>
+                        5
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <h6>
+                        Codice CP
+                    </h6>
+                    <p>
+                        92911
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <h6>
+                        Costo Biglietto
+                    </h6>
+                    <p id="costs">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./asset/js/main.js"></script>
 </body>
 </html>
